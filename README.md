@@ -4,6 +4,16 @@ This is a utility function that builds social media images by overlaying a title
 
 > **NOTE:** a Cloudinary account is required to use this package. The free tier should be more than enough for most small to medium websites using this package.
 
+## Installation
+
+```bash
+# install using npm
+npm install --save @jlengstorf/get-share-image
+
+# install using yarn
+yarn add @jlengstorf/get-share-image
+```
+
 ## Example Usage
 
 ```js
