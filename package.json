@@ -1,0 +1,18 @@
+{
+  "name": "@jlengstorf/get-share-image",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc src/index.ts --outDir . -d "
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "types": "index.d.ts",
+  "devDependencies": {
+    "typescript": "^3.7.4"
+  }
+}
