@@ -5,6 +5,8 @@ interface Config {
   cloudName: string;
   imagePublicID: string;
   cloudinaryUrlBase?: string;
+  titleExtraConfig?: string;
+  taglineExtraConfig?: string;
   titleFont?: string;
   taglineFont?: string;
   imageWidth?: number;
@@ -31,6 +33,8 @@ export default function generateSocialImage({
   imagePublicID,
   cloudinaryUrlBase = 'https://res.cloudinary.com',
   titleFont = 'arial',
+  titleExtraConfig = '',
+  taglineExtraConfig = '',
   taglineFont = 'arial',
   imageWidth = 1280,
   imageHeight = 669,
@@ -60,7 +64,9 @@ export default function generateSocialImage({
     'g_south_west',
     `x_${textLeftOffset}`,
     `y_${titleBottomOffset}`,
-    `l_text:${titleFont}_${titleFontSize}:${encodeURIComponent(title)}`,
+    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${encodeURIComponent(
+      title,
+    )}`,
   ].join(',');
 
   // configure the tagline text
@@ -71,7 +77,9 @@ export default function generateSocialImage({
     'g_north_west',
     `x_${textLeftOffset}`,
     `y_${taglineTopOffset}`,
-    `l_text:${taglineFont}_${taglineFontSize}:${encodeURIComponent(tagline)}`,
+    `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${encodeURIComponent(
+      tagline,
+    )}`,
   ].join(',');
 
   // combine all the pieces required to generate a Cloudinary URL

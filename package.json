@@ -9,7 +9,8 @@
     "url": "https://github.com/jlengstorf/get-share-image"
   },
   "scripts": {
-    "build": "tsc src/index.ts --outDir . -d"
+    "build": "tsc src/index.ts --outDir . -d",
+    "prepublish": "npm run build"
   },
   "files": [
     "index.js",
