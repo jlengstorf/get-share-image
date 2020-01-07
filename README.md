@@ -4,6 +4,10 @@ This is a utility function that builds social media images by overlaying a title
 
 > **NOTE:** a Cloudinary account is required to use this package. The free tier should be more than enough for most small to medium websites using this package.
 
+**This was created as part of an article series:**
+- [How to design a social sharing card template](https://www.learnwithjason.dev/blog/design-social-sharing-card/)
+- [How the code in this package works](https://www.learnwithjason.dev/blog/auto-generate-social-image/)
+
 ## Installation
 
 ```bash
@@ -13,6 +17,8 @@ npm install --save @jlengstorf/get-share-image
 # install using yarn
 yarn add @jlengstorf/get-share-image
 ```
+
+See how this is used in a production site in the [learnwithjason.dev source code](https://github.com/jlengstorf/learnwithjason.dev/blob/070468828e8c758d150a8d573fd471d786278243/packages/%40jlengstorf/gatsby-theme-code-blog/src/gatsby-theme-blog-core/components/post.js#L55-L64).
 
 ## Example Usage
 
@@ -43,25 +49,27 @@ Which looks like this:
 
 This utility function accepts a config object. Available options are as follows:
 
-| name              | required | description                                                          |
-| ----------------- | -------- | -------------------------------------------------------------------- |
-| title             | true     | (string) title text to be placed on the card                         |
-| tagline           | true     | (string) tagline text to be placed on the card                       |
-| cloudName         | true     | (string) your Cloudinary cloud name (i.e. your username)             |
-| imagePublicID     | true     | (string) the public ID of your social image template                 |
-| cloudinaryUrlBase |          | (string, default `https://res.cloudinary.com`) Cloudinary asset URL  |
-| titleFont         |          | (string, default `arial`) font to use for rendering title            |
-| taglineFont       |          | (string, default `arial`) font to use for rendering tagline          |
-| imageWidth        |          | (number, default `1280`) SEO image width (defaults to Twitter ratio) |
-| imageHeight       |          | (number, default `669`) SEO image height (defaults to Twitter ratio) |
-| textAreaWidth     |          | (number, default `760`) width of title and tagline text areas        |
-| textLeftOffset    |          | (number, default `480`) distance from left edge to start text boxes  |
-| titleBottomOffset |          | (number, default `254`) distance from bottom to start title text     |
-| taglineTopOffset  |          | (number, default `445`) distance from top to start tagline text      |
-| textColor         |          | (string, default `000000`) hex value for text color                  |
-| titleFontSize     |          | (number, default `64`) font size to use for the title                |
-| taglineFontSize   |          | (number, default `48`) font size to use for the tagline              |
-| version           |          | (string) optional version string for caching                         |
+| name               | required | description                                                          |
+| ------------------ | -------- | -------------------------------------------------------------------- |
+| title              | true     | (string) title text to be placed on the card                         |
+| tagline            | true     | (string) tagline text to be placed on the card                       |
+| cloudName          | true     | (string) your Cloudinary cloud name (i.e. your username)             |
+| imagePublicID      | true     | (string) the public ID of your social image template                 |
+| cloudinaryUrlBase  |          | (string, default `https://res.cloudinary.com`) Cloudinary asset URL  |
+| titleFont          |          | (string, default `arial`) font to use for rendering title            |
+| titleExtraConfig   |          | (string) optional additional text overlay config                     |
+| taglineExtraConfig |          | (string) optional additional text overlay config                     |
+| taglineFont        |          | (string, default `arial`) font to use for rendering tagline          |
+| imageWidth         |          | (number, default `1280`) SEO image width (defaults to Twitter ratio) |
+| imageHeight        |          | (number, default `669`) SEO image height (defaults to Twitter ratio) |
+| textAreaWidth      |          | (number, default `760`) width of title and tagline text areas        |
+| textLeftOffset     |          | (number, default `480`) distance from left edge to start text boxes  |
+| titleBottomOffset  |          | (number, default `254`) distance from bottom to start title text     |
+| taglineTopOffset   |          | (number, default `445`) distance from top to start tagline text      |
+| textColor          |          | (string, default `000000`) hex value for text color                  |
+| titleFontSize      |          | (number, default `64`) font size to use for the title                |
+| taglineFontSize    |          | (number, default `48`) font size to use for the tagline              |
+| version            |          | (string) optional version string for caching                         |
 
 ### Setting config options
 
