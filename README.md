@@ -4,6 +4,10 @@ This is a utility function that builds social media images by overlaying a title
 
 > **NOTE:** a Cloudinary account is required to use this package. The free tier should be more than enough for most small to medium websites using this package.
 
+**This was created as part of an article series:**
+- [How to design a social sharing card template](https://www.learnwithjason.dev/blog/design-social-sharing-card/)
+- [How the code in this package works](https://www.learnwithjason.dev/blog/auto-generate-social-image/)
+
 ## Installation
 
 ```bash
@@ -13,6 +17,8 @@ npm install --save @jlengstorf/get-share-image
 # install using yarn
 yarn add @jlengstorf/get-share-image
 ```
+
+See how this is used in a production site in the [learnwithjason.dev source code](https://github.com/jlengstorf/learnwithjason.dev/blob/070468828e8c758d150a8d573fd471d786278243/packages/%40jlengstorf/gatsby-theme-code-blog/src/gatsby-theme-blog-core/components/post.js#L55-L64).
 
 ## Example Usage
 
