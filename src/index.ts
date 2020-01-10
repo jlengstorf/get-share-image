@@ -22,6 +22,16 @@ interface Config {
 }
 
 /**
+ * Encodes characters for Cloudinary URL
+ * Encodes some not allowed in Cloudinary parameter values twice:
+ *   hash, comma, slash, question mark, backslash
+ *   https://support.cloudinary.com/hc/en-us/articles/202521512-How-to-add-a-slash-character-or-any-other-special-characters-in-text-overlays-
+ */
+function cleanText(text: string): string {
+  return encodeURIComponent(text).replace(/%(23|2C|2F|3F|5C)/g, "%25$1");
+};
+
+/**
  * Generates a social sharing image with custom text using Cloudinary’s APIs.
  *
  * @see https://cloudinary.com/documentation/image_transformations#adding_text_captions
@@ -64,9 +74,7 @@ export default function generateSocialImage({
     'g_south_west',
     `x_${textLeftOffset}`,
     `y_${titleBottomOffset}`,
-    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${encodeURIComponent(
-      title,
-    )}`,
+    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${cleanText(title)}`,
   ].join(',');
 
   // configure the tagline text
@@ -77,9 +85,7 @@ export default function generateSocialImage({
     'g_north_west',
     `x_${textLeftOffset}`,
     `y_${taglineTopOffset}`,
-    `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${encodeURIComponent(
-      tagline,
-    )}`,
+    `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(tagline)}`,
   ].join(',');
 
   // combine all the pieces required to generate a Cloudinary URL
