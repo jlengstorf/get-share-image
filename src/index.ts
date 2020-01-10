@@ -78,7 +78,7 @@ export default function generateSocialImage({
   ].join(',');
 
   // configure the tagline text
-  const taglineConfig = [
+  const taglineConfig = tagline ? [
     `w_${textAreaWidth}`,
     'c_fit',
     `co_rgb:${textColor}`,
@@ -86,7 +86,7 @@ export default function generateSocialImage({
     `x_${textLeftOffset}`,
     `y_${taglineTopOffset}`,
     `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(tagline)}`,
-  ].join(',');
+  ].join(',') : undefined;
 
   // combine all the pieces required to generate a Cloudinary URL
   const urlParts = [
