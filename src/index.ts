@@ -22,6 +22,16 @@ interface Config {
 }
 
 /**
+ * Replaces characters not allowed in Cloudinary parameter values
+ */
+function cleanText(text: string): string {
+  return text
+    .replace(/%2C/g, '%252C') // comma
+    .replace(/%2F/g, '%252F') // slash
+    .replace(/\./g, '%2e');   // dot
+};
+
+/**
  * Generates a social sharing image with custom text using Cloudinary’s APIs.
  *
  * @see https://cloudinary.com/documentation/image_transformations#adding_text_captions
@@ -64,9 +74,9 @@ export default function generateSocialImage({
     'g_south_west',
     `x_${textLeftOffset}`,
     `y_${titleBottomOffset}`,
-    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${encodeURIComponent(
+    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${cleanText(encodeURIComponent(
       title,
-    )}`,
+    ))}`,
   ].join(',');
 
   // configure the tagline text
@@ -77,9 +87,9 @@ export default function generateSocialImage({
     'g_north_west',
     `x_${textLeftOffset}`,
     `y_${taglineTopOffset}`,
-    `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${encodeURIComponent(
+    `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(encodeURIComponent(
       tagline,
-    )}`,
+    ))}`,
   ].join(',');
 
   // combine all the pieces required to generate a Cloudinary URL
