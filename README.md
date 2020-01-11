@@ -52,7 +52,7 @@ This utility function accepts a config object. Available options are as follows:
 | name               | required | description                                                          |
 | ------------------ | -------- | -------------------------------------------------------------------- |
 | title              | true     | (string) title text to be placed on the card                         |
-| tagline            | true     | (string) tagline text to be placed on the card                       |
+| tagline            |          | (string) tagline text to be placed on the card                       |
 | cloudName          | true     | (string) your Cloudinary cloud name (i.e. your username)             |
 | imagePublicID      | true     | (string) the public ID of your social image template                 |
 | cloudinaryUrlBase  |          | (string, default `https://res.cloudinary.com`) Cloudinary asset URL  |
