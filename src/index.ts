@@ -8,6 +8,7 @@ interface Config {
   titleExtraConfig?: string;
   taglineExtraConfig?: string;
   titleFont?: string;
+  titleFontWeight?: string;
   taglineFont?: string;
   imageWidth?: number;
   imageHeight?: number;
@@ -18,6 +19,7 @@ interface Config {
   textColor?: string;
   titleFontSize?: number;
   taglineFontSize?: number;
+  taglineFontWeight?: number;
   version?: string;
 }
 
@@ -43,6 +45,7 @@ export default function generateSocialImage({
   imagePublicID,
   cloudinaryUrlBase = 'https://res.cloudinary.com',
   titleFont = 'arial',
+  titleFontWeight = 'normal',
   titleExtraConfig = '',
   taglineExtraConfig = '',
   taglineFont = 'arial',
@@ -55,6 +58,7 @@ export default function generateSocialImage({
   textColor = '000000',
   titleFontSize = 64,
   taglineFontSize = 48,
+  taglineFontWeight= 'normal',
   version = null,
 }: Config): string {
   // configure social media image dimensions, quality, and format
@@ -74,7 +78,7 @@ export default function generateSocialImage({
     'g_south_west',
     `x_${textLeftOffset}`,
     `y_${titleBottomOffset}`,
-    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${cleanText(
+    `l_text:${titleFont}_${titleFontSize}_${titleFontWeight}${titleExtraConfig}:${cleanText(
       title,
     )}`,
   ].join(',');
