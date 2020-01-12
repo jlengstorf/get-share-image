@@ -92,7 +92,7 @@ export default function generateSocialImage({
         'g_north_west',
         `x_${textLeftOffset}`,
         `y_${taglineTopOffset}`,
-        `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(
+        `l_text:${taglineFont}_${taglineFontSize}_${taglineFontWeight}${taglineExtraConfig}:${cleanText(
           tagline,
         )}`,
       ].join(',')
