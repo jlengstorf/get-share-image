@@ -23,7 +23,7 @@ See how this is used in a production site in the [learnwithjason.dev source code
 ## Example Usage
 
 ```js
-import getShareImage from require('@jlengstorf/get-share-image');
+import getShareImage from '@jlengstorf/get-share-image';
 
 const socialImage = getShareImage({
   title: 'Deploy a Node.js App to DigitalOcean with SSL',
