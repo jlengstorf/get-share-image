@@ -50,29 +50,29 @@ Which looks like this:
 
 This utility function accepts a config object. Available options are as follows:
 
-| name               | required | description                                                                                                     |
-| ------------------ | -------- | --------------------------------------------------------------------------------------------------------------- |
-| title              | true     | (string) title text to be placed on the card                                                                    |
-| tagline            |          | (string) tagline text to be placed on the card                                                                  |
-| cloudName          | true     | (string) your Cloudinary cloud name (i.e. your username)                                                        |
-| imagePublicID      | true     | (string) the public ID of your social image template                                                            |
-| cloudinaryUrlBase  |          | (string, default `https://res.cloudinary.com`) Cloudinary asset URL                                             |
-| titleFont          |          | (string, default `arial`) font to use for rendering title                                                       |
-| titleExtraConfig   |          | (string) optional additional text overlay config                                                                |
-| taglineExtraConfig |          | (string) optional additional text overlay config                                                                |
-| taglineFont        |          | (string, default `arial`) font to use for rendering tagline                                                     |
-| imageWidth         |          | (number, default `1280`) SEO image width (defaults to Twitter ratio)                                            |
-| imageHeight        |          | (number, default `669`) SEO image height (defaults to Twitter ratio)                                            |
-| textAreaWidth      |          | (number, default `760`) width of title and tagline text areas                                                   |
-| textLeftOffset     |          | (number, default `480`) distance from left edge to start text boxes                                             |
-| titleBottomOffset  |          | (number, default `254`) distance from bottom to start title text                                                |
-| taglineTopOffset   |          | (number, default `445`) distance from top to start tagline text                                                 |
-| textColor          |          | (string, default `000000`) hex value for text color                                                             |
+| name               | required | description                                                          |
+| ------------------ | -------- | -------------------------------------------------------------------- |
+| title              | true     | (string) title text to be placed on the card                         |
+| tagline            |          | (string) tagline text to be placed on the card                       |
+| cloudName          | true     | (string) your Cloudinary cloud name (i.e. your username)             |
+| imagePublicID      | true     | (string) the public ID of your social image template                 |
+| cloudinaryUrlBase  |          | (string, default `https://res.cloudinary.com`) Cloudinary asset URL  |
+| titleFont          |          | (string, default `arial`) font to use for rendering title            |
+| titleExtraConfig   |          | (string) optional additional text overlay config                     |
+| taglineExtraConfig |          | (string) optional additional text overlay config                     |
+| taglineFont        |          | (string, default `arial`) font to use for rendering tagline          |
+| imageWidth         |          | (number, default `1280`) SEO image width (defaults to Twitter ratio) |
+| imageHeight        |          | (number, default `669`) SEO image height (defaults to Twitter ratio) |
+| textAreaWidth      |          | (number, default `760`) width of title and tagline text areas        |
+| textLeftOffset     |          | (number, default `480`) distance from left edge to start text boxes  |
+| titleBottomOffset  |          | (number, default `254`) distance from bottom to start title text     |
+| taglineTopOffset   |          | (number, default `445`) distance from top to start tagline text      |
+| textColor          |          | (string, default `000000`) hex value for text color                  |
 | titleColor         |          | (string) hex value specific for title color. If this is not set, the color will be the one set to `textColor`   |
 | taglineColor       |          | (string) hex value specific for tagline color. If this is not set, the color will be the one set to `textColor` |
-| titleFontSize      |          | (number, default `64`) font size to use for the title                                                           |
-| taglineFontSize    |          | (number, default `48`) font size to use for the tagline                                                         |
-| version            |          | (string) optional version string for caching                                                                    |
+| titleFontSize      |          | (number, default `64`) font size to use for the title                |
+| taglineFontSize    |          | (number, default `48`) font size to use for the tagline              |
+| version            |          | (string) optional version string for caching                         |
 
 ### Setting config options
 
