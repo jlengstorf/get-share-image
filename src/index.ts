@@ -1,7 +1,7 @@
 // add TypeScript definitions for autocomplete in IDEs
 interface Config {
   title: string;
-  tagline: string;
+  tagline?: string;
   cloudName: string;
   imagePublicID: string;
   cloudinaryUrlBase?: string;
@@ -21,6 +21,16 @@ interface Config {
   titleFontSize?: number;
   taglineFontSize?: number;
   version?: string;
+}
+
+/**
+ * Encodes characters for Cloudinary URL
+ * Encodes some not allowed in Cloudinary parameter values twice:
+ *   hash, comma, slash, question mark, backslash
+ *   https://support.cloudinary.com/hc/en-us/articles/202521512-How-to-add-a-slash-character-or-any-other-special-characters-in-text-overlays-
+ */
+function cleanText(text: string): string {
+  return encodeURIComponent(text).replace(/%(23|2C|2F|3F|5C)/g, '%25$1');
 }
 
 /**
@@ -68,23 +78,25 @@ export default function generateSocialImage({
     'g_south_west',
     `x_${textLeftOffset}`,
     `y_${titleBottomOffset}`,
-    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${encodeURIComponent(
+    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${cleanText(
       title,
     )}`,
   ].join(',');
 
   // configure the tagline text
-  const taglineConfig = [
-    `w_${textAreaWidth}`,
-    'c_fit',
-    `co_rgb:${taglineColor || textColor}`,
-    'g_north_west',
-    `x_${textLeftOffset}`,
-    `y_${taglineTopOffset}`,
-    `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${encodeURIComponent(
-      tagline,
-    )}`,
-  ].join(',');
+  const taglineConfig = tagline
+    ? [
+        `w_${textAreaWidth}`,
+        'c_fit',
+        `co_rgb:${textColor}`,
+        'g_north_west',
+        `x_${textLeftOffset}`,
+        `y_${taglineTopOffset}`,
+        `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(
+          tagline,
+        )}`,
+      ].join(',')
+    : undefined;
 
   // combine all the pieces required to generate a Cloudinary URL
   const urlParts = [
