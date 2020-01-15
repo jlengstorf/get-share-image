@@ -74,11 +74,15 @@ This utility function accepts a config object. Available options are as follows:
 ### Setting config options
 
 ```js
-const sharingImage = getSharingImage({
+const socialImage = getShareImage({
   title: 'My Post Title',
   tagline: 'A tagline for the post',
   cloudName: 'myusername',
   imagePublicID: 'my-template-image.jpg',
+  titleExtraConfig: '_bold', // optional - set title font weight to bold
   textColor: '663399', // optional — set the color to purple
 });
 ```
+
+## Who is using this?
+- [Echobind](https://echobind.com/) with their [blog image generator](https://github.com/echobind/blog-image-generator)
