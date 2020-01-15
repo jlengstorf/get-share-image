@@ -74,7 +74,7 @@ This utility function accepts a config object. Available options are as follows:
 ### Setting config options
 
 ```js
-const sharingImage = getSharingImage({
+const socialImage = getShareImage({
   title: 'My Post Title',
   tagline: 'A tagline for the post',
   cloudName: 'myusername',
