@@ -88,7 +88,7 @@ export default function generateSocialImage({
     ? [
         `w_${textAreaWidth}`,
         'c_fit',
-        `co_rgb:${textColor}`,
+        `co_rgb:${taglineColor || textColor}`,
         'g_north_west',
         `x_${textLeftOffset}`,
         `y_${taglineTopOffset}`,
