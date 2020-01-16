@@ -16,6 +16,8 @@ interface Config {
   titleBottomOffset?: number;
   taglineTopOffset?: number;
   textColor?: string;
+  titleColor?: string;
+  taglineColor?: string;
   titleFontSize?: number;
   taglineFontSize?: number;
   version?: string;
@@ -53,6 +55,8 @@ export default function generateSocialImage({
   titleBottomOffset = 254,
   taglineTopOffset = 445,
   textColor = '000000',
+  titleColor,
+  taglineColor,
   titleFontSize = 64,
   taglineFontSize = 48,
   version = null,
@@ -70,7 +74,7 @@ export default function generateSocialImage({
   const titleConfig = [
     `w_${textAreaWidth}`,
     'c_fit',
-    `co_rgb:${textColor}`,
+    `co_rgb:${titleColor || textColor}`,
     'g_south_west',
     `x_${textLeftOffset}`,
     `y_${titleBottomOffset}`,
@@ -84,7 +88,7 @@ export default function generateSocialImage({
     ? [
         `w_${textAreaWidth}`,
         'c_fit',
-        `co_rgb:${textColor}`,
+        `co_rgb:${taglineColor || textColor}`,
         'g_north_west',
         `x_${textLeftOffset}`,
         `y_${taglineTopOffset}`,

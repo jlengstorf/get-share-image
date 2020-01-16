@@ -5,6 +5,7 @@ This is a utility function that builds social media images by overlaying a title
 > **NOTE:** a Cloudinary account is required to use this package. The free tier should be more than enough for most small to medium websites using this package.
 
 **This was created as part of an article series:**
+
 - [How to design a social sharing card template](https://www.learnwithjason.dev/blog/design-social-sharing-card/)
 - [How the code in this package works](https://www.learnwithjason.dev/blog/auto-generate-social-image/)
 
@@ -67,6 +68,8 @@ This utility function accepts a config object. Available options are as follows:
 | titleBottomOffset  |          | (number, default `254`) distance from bottom to start title text     |
 | taglineTopOffset   |          | (number, default `445`) distance from top to start tagline text      |
 | textColor          |          | (string, default `000000`) hex value for text color                  |
+| titleColor         |          | (string) hex value specific for title color. If this is not set, the color will be the one set to `textColor`   |
+| taglineColor       |          | (string) hex value specific for tagline color. If this is not set, the color will be the one set to `textColor` |
 | titleFontSize      |          | (number, default `64`) font size to use for the title                |
 | taglineFontSize    |          | (number, default `48`) font size to use for the tagline              |
 | version            |          | (string) optional version string for caching                         |
@@ -85,4 +88,6 @@ const socialImage = getShareImage({
 ```
 
 ## Who is using this?
+
 - [Echobind](https://echobind.com/) with their [blog image generator](https://github.com/echobind/blog-image-generator)
+- [Horacio Herrera](https://horacioh.com)
