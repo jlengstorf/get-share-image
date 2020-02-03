@@ -93,3 +93,4 @@ const socialImage = getShareImage({
 - [@jsjoeio](https://github.com/jsjoeio) on his [personal website](https://github.com/jsjoeio/joeprevite.com)
 - [Horacio Herrera](https://horacioh.com)
 - [@chris_berry](https://twitter.com/chris_berry) on his [blog](https://chrisberry.io)
+- [@codebender828](https://twitter.com/codebender828) on his [blog](https://jbakebwa.dev)
