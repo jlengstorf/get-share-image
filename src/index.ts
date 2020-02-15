@@ -12,7 +12,8 @@ interface Config {
   imageWidth?: number;
   imageHeight?: number;
   textAreaWidth?: number;
-  textLeftOffset?: number;
+  titleLeftOffset?: number;
+  taglineLeftOffset?: number;
   titleBottomOffset?: number;
   taglineTopOffset?: number;
   textColor?: string;
@@ -51,7 +52,8 @@ export default function generateSocialImage({
   imageWidth = 1280,
   imageHeight = 669,
   textAreaWidth = 760,
-  textLeftOffset = 480,
+  titleLeftOffset = 480,
+  taglineLeftOffset = 480,
   titleBottomOffset = 254,
   taglineTopOffset = 445,
   textColor = '000000',
@@ -76,7 +78,7 @@ export default function generateSocialImage({
     'c_fit',
     `co_rgb:${titleColor || textColor}`,
     'g_south_west',
-    `x_${textLeftOffset}`,
+    `x_${titleLeftOffset}`,
     `y_${titleBottomOffset}`,
     `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${cleanText(
       title,
@@ -90,7 +92,7 @@ export default function generateSocialImage({
         'c_fit',
         `co_rgb:${taglineColor || textColor}`,
         'g_north_west',
-        `x_${textLeftOffset}`,
+        `x_${taglineLeftOffset}`,
         `y_${taglineTopOffset}`,
         `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(
           tagline,
