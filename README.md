@@ -66,7 +66,7 @@ This utility function accepts a config object. Available options are as follows:
 | textAreaWidth      |          | (number, default `760`) width of title and tagline text areas        |
 | textLeftOffset     |          | (number, default `480`) distance from left edge to start text boxes  |
 | titleLeftOffset    |          | (number, `null`) distance from left edge to start text boxes  |
-| taglineLeftOffset  |          | (number, default `null`) distance from left edge to start text boxes  |
+| taglineLeftOffset  |          | (number, default `null`) distance from left edge to start text boxes |
 | titleBottomOffset  |          | (number, default `254`) distance from bottom to start title text     |
 | taglineTopOffset   |          | (number, default `445`) distance from top to start tagline text      |
 | textColor          |          | (string, default `000000`) hex value for text color                  |
