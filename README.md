@@ -64,6 +64,7 @@ This utility function accepts a config object. Available options are as follows:
 | imageWidth         |          | (number, default `1280`) SEO image width (defaults to Twitter ratio) |
 | imageHeight        |          | (number, default `669`) SEO image height (defaults to Twitter ratio) |
 | textAreaWidth      |          | (number, default `760`) width of title and tagline text areas        |
+| textLeftOffset     |          | (number, default `480`) distance from left edge to start text boxes  |
 | titleLeftOffset    |          | (number, default `480`) distance from left edge to start text boxes  |
 | taglineLeftOffset  |          | (number, default `480`) distance from left edge to start text boxes  |
 | titleBottomOffset  |          | (number, default `254`) distance from bottom to start title text     |
