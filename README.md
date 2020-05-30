@@ -31,8 +31,8 @@ const socialImage = getShareImage({
   tagline: '#devops #nodejs #ssl',
   cloudName: 'jlengstorf',
   imagePublicID: 'lwj/blog-post-card',
-  titleFont: "futura",
-  taglineFont: "futura",
+  titleFont: 'futura',
+  taglineFont: 'futura',
   textColor: '232129',
 });
 ```
