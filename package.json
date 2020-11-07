@@ -1,6 +1,6 @@
 {
   "name": "@jlengstorf/get-share-image",
-  "version": "0.7.2-beta.1",
+  "version": "0.8.0",
   "main": "index.js",
   "module": "index.mjs",
   "exports": {
