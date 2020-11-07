@@ -1,39 +1,42 @@
-// add TypeScript definitions for autocomplete in IDEs
-interface Config {
-  title: string;
-  tagline?: string;
-  cloudName: string;
-  imagePublicID: string;
-  cloudinaryUrlBase?: string;
-  titleExtraConfig?: string;
-  taglineExtraConfig?: string;
-  titleFont?: string;
-  taglineFont?: string;
-  imageWidth?: number;
-  imageHeight?: number;
-  textAreaWidth?: number;
-  textLeftOffset?: number;
-  titleGravity?: string;
-  taglineGravity?: string;
-  titleLeftOffset?: number;
-  taglineLeftOffset?: number;
-  titleBottomOffset?: number;
-  taglineTopOffset?: number;
-  textColor?: string;
-  titleColor?: string;
-  taglineColor?: string;
-  titleFontSize?: number;
-  taglineFontSize?: number;
-  version?: string;
-}
+/**
+ * @typedef Config
+ * @prop {string} title
+ * @prop {string} [tagline]
+ * @prop {string} cloudName
+ * @prop {string} imagePublicID
+ * @prop {string} [cloudinaryUrlBase]
+ * @prop {string} [titleExtraConfig]
+ * @prop {string} [taglineExtraConfig]
+ * @prop {string} [titleFont]
+ * @prop {string} [taglineFont]
+ * @prop {number} [imageWidth]
+ * @prop {number} [imageHeight]
+ * @prop {number} [textAreaWidth]
+ * @prop {number} [textLeftOffset]
+ * @prop {string} [titleGravity]
+ * @prop {string} [taglineGravity]
+ * @prop {number} [titleLeftOffset]
+ * @prop {number} [taglineLeftOffset]
+ * @prop {number} [titleBottomOffset]
+ * @prop {number} [taglineTopOffset]
+ * @prop {string} [textColor]
+ * @prop {string} [titleColor]
+ * @prop {string} [taglineColor]
+ * @prop {number} [titleFontSize]
+ * @prop {number} [taglineFontSize]
+ * @prop {string} [version]
+ */
 
 /**
  * Encodes characters for Cloudinary URL
  * Encodes some not allowed in Cloudinary parameter values twice:
  *   hash, comma, slash, question mark, backslash
  *   https://support.cloudinary.com/hc/en-us/articles/202521512-How-to-add-a-slash-character-or-any-other-special-characters-in-text-overlays-
+ *
+ * @param {string} text
+ * @return {string}
  */
-function cleanText(text: string): string {
+function cleanText(text) {
   return encodeURIComponent(text).replace(/%(23|2C|2F|3F|5C)/g, '%25$1');
 }
 
@@ -41,6 +44,9 @@ function cleanText(text: string): string {
  * Generates a social sharing image with custom text using Cloudinary’s APIs.
  *
  * @see https://cloudinary.com/documentation/image_transformations#adding_text_captions
+ *
+ * @param {Config} config
+ * @return {string}
  */
 export default function generateSocialImage({
   title,
@@ -68,7 +74,7 @@ export default function generateSocialImage({
   titleFontSize = 64,
   taglineFontSize = 48,
   version = null,
-}: Config): string {
+}) {
   // configure social media image dimensions, quality, and format
   const imageConfig = [
     `w_${imageWidth}`,
