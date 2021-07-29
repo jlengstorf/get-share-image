@@ -100,3 +100,4 @@ const socialImage = getShareImage({
 - [@chris_berry](https://twitter.com/chris_berry) on his [blog](https://chrisberry.io)
 - [@codebender828](https://twitter.com/codebender828) on his [blog](https://jbakebwa.dev)
 - [@ryan_c_harris](https://twitter.com/ryan_c_harris) on his [blog](https://ryanharris.dev)
+- [Idiomatic Programmers](https://idiomaticprogrammers.com/)
