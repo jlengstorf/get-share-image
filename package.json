@@ -15,10 +15,8 @@
     "prepublish": "npm run build"
   },
   "files": [
-    "dist/**/*",
-    "index.js",
-    "index.mjs",
-    "index.d.ts"
+    "dist",
+    "src"
   ],
   "types": "dist/index.d.ts",
   "devDependencies": {
