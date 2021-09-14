@@ -4,7 +4,7 @@ interface Props {
   tagline: string;
   cloudName: string;
   imagePublicID: string;
-  cloudinaryUrlBase: string;
+  cloudinaryUrlBase?: string;
   titleFont?: string;
   titleExtraConfig?: string;
   taglineExtraConfig?: string;
@@ -96,16 +96,16 @@ export default function generateSocialImage({
   // configure the tagline text
   const taglineConfig: string | undefined = tagline
     ? [
-        `w_${textAreaWidth}`,
-        'c_fit',
-        `co_rgb:${taglineColor || textColor}`,
-        `g_${taglineGravity}`,
-        `x_${taglineLeftOffset || textLeftOffset}`,
-        `y_${taglineTopOffset}`,
-        `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(
-          tagline,
-        )}`,
-      ].join(',')
+      `w_${textAreaWidth}`,
+      'c_fit',
+      `co_rgb:${taglineColor || textColor}`,
+      `g_${taglineGravity}`,
+      `x_${taglineLeftOffset || textLeftOffset}`,
+      `y_${taglineTopOffset}`,
+      `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(
+        tagline,
+      )}`,
+    ].join(',')
     : undefined;
 
   // combine all the pieces required to generate a Cloudinary URL
