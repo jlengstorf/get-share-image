@@ -2,7 +2,6 @@
   "name": "@jlengstorf/get-share-image",
   "version": "0.8.0",
   "main": "dist/index.js",
-  "module": "index.mjs",
   "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
   "license": "MIT",
   "repository": {
@@ -12,13 +11,13 @@
   "scripts": {
     "build:cjs": "tsc src/index.ts --outDir . -d",
     "build:esm": "cpy ./src/index.ts . --rename=index.mjs",
-    "build": "tsc src/index.ts --outDir . -d",
+    "build": "tsc",
     "prepublish": "npm run build"
   },
   "files": [
     "dist/**/*"
   ],
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "cpy-cli": "^3.1.1",
     "typescript": "^4.4.3"
