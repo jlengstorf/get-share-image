@@ -11,11 +11,14 @@
   "scripts": {
     "build:cjs": "tsc src/index.ts --outDir . -d",
     "build:esm": "cpy ./src/index.ts . --rename=index.mjs",
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:esm",
     "prepublish": "npm run build"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "index.js",
+    "index.mjs",
+    "index.d.ts"
   ],
   "types": "dist/index.d.ts",
   "devDependencies": {
