@@ -12,7 +12,7 @@
   "scripts": {
     "build:cjs": "tsc src/index.ts --outDir . -d",
     "build:esm": "cpy ./src/index.ts . --rename=index.mjs",
-    "build": "tsc",
+    "build": "tsc src/index.ts --outDir . -d",
     "prepublish": "npm run build"
   },
   "files": [
