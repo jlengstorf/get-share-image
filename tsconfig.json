@@ -1,30 +1,14 @@
-
 {
   "compilerOptions": {
-    // Target latest version of ECMAScript.
-    "target": "es6",
-    // Search under node_modules for non-relative imports.
-    "moduleResolution": "node",
-    // Process & infer types from .js files.
-    "allowJs": true,
-    // Let TypeScript emit the d.ts files
-    "emitDeclarationOnly": true,
-    // Set declartion to true
-    "declaration": true,
-    // Determine where the d.ts files are put
-    "declarationDir": "./dist/types",
-    // Redirect to declarationDir
-    "outDir": "./dist/",
-    // Enable strictest settings like strictNullChecks & noImplicitAny.
-    "strict": true,
-    // Disallow features that require cross-file information for emit.
-    "isolatedModules": true,
-    // Import non-ES modules as default imports.
-    "esModuleInterop": true,
-    // Allow TypeScript to automatically compile tsx
-    "jsx": "react",
-    // Allow named exports rather than export * from
-    "allowSyntheticDefaultImports": true
+    "target": "esnext" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */,
+    "module": "commonjs" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
+    "checkJs": false /* Report errors in .js files. */,
+    "outDir": "dist" /* Redirect output structure to the directory. */,
+    "rootDir": "src" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
+    "strict": false /* Enable all strict type-checking options. */,
+    "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
+    "declaration": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
