@@ -15,8 +15,7 @@
     "prepublish": "npm run build"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "types": "dist/index.d.ts",
   "devDependencies": {
