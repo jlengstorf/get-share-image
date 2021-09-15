@@ -26,6 +26,7 @@ See how this is used in a production site in the [learnwithjason.dev source code
 ```js
 import getShareImage from '@jlengstorf/get-share-image';
 
+
 const socialImage = getShareImage({
   title: 'Deploy a Node.js App to DigitalOcean with SSL',
   tagline: '#devops #nodejs #ssl',
@@ -34,6 +35,8 @@ const socialImage = getShareImage({
   titleFont: 'futura',
   taglineFont: 'futura',
   textColor: '232129',
+  titleColor: '232129',
+  taglineColor: '232129'
 });
 ```
 
