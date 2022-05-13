@@ -6,8 +6,8 @@ This is a utility function that builds social media images by overlaying a title
 
 **This was created as part of an article series:**
 
-- [How to design a social sharing card template](https://www.learnwithjason.dev/blog/design-social-sharing-card/)
-- [How the code in this package works](https://www.learnwithjason.dev/blog/auto-generate-social-image/)
+- [How to design a social sharing card template](https://www.learnwithjason.dev/blog/design-social-sharing-card)
+- [How the code in this package works](https://www.learnwithjason.dev/blog/auto-generate-social-image)
 
 ## Installation
 
