@@ -1,31 +1,31 @@
-/**
- * @typedef Config
- * @prop {string} title
- * @prop {string} [tagline]
- * @prop {string} cloudName
- * @prop {string} imagePublicID
- * @prop {string} [cloudinaryUrlBase]
- * @prop {string} [titleExtraConfig]
- * @prop {string} [taglineExtraConfig]
- * @prop {string} [titleFont]
- * @prop {string} [taglineFont]
- * @prop {number} [imageWidth]
- * @prop {number} [imageHeight]
- * @prop {number} [textAreaWidth]
- * @prop {number} [textLeftOffset]
- * @prop {string} [titleGravity]
- * @prop {string} [taglineGravity]
- * @prop {number} [titleLeftOffset]
- * @prop {number} [taglineLeftOffset]
- * @prop {number} [titleBottomOffset]
- * @prop {number} [taglineTopOffset]
- * @prop {string} [textColor]
- * @prop {string} [titleColor]
- * @prop {string} [taglineColor]
- * @prop {number} [titleFontSize]
- * @prop {number} [taglineFontSize]
- * @prop {string} [version]
- */
+
+interface Props {
+  title: string;
+  tagline: string;
+  cloudName: string;
+  imagePublicID: string;
+  cloudinaryUrlBase?: string;
+  titleFont?: string;
+  titleExtraConfig?: string;
+  taglineExtraConfig?: string;
+  taglineFont?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  textAreaWidth?: number;
+  textLeftOffset?: number;
+  titleGravity?: string;
+  taglineGravity?: string;
+  titleLeftOffset?: number | null;
+  taglineLeftOffset?: number | null;
+  titleBottomOffset?: number;
+  taglineTopOffset?: number;
+  textColor?: string;
+  titleColor: string;
+  taglineColor: string;
+  titleFontSize?: number;
+  taglineFontSize?: number;
+  version?: number | null;
+}
 
 /**
  * Encodes characters for Cloudinary URL
@@ -33,10 +33,8 @@
  *   hash, comma, slash, question mark, backslash
  *   https://support.cloudinary.com/hc/en-us/articles/202521512-How-to-add-a-slash-character-or-any-other-special-characters-in-text-overlays-
  *
- * @param {string} text
- * @return {string}
  */
-function cleanText(text) {
+function cleanText(text: string) {
   return encodeURIComponent(text).replace(/%(23|2C|2F|3F|5C)/g, '%25$1');
 }
 
@@ -45,8 +43,6 @@ function cleanText(text) {
  *
  * @see https://cloudinary.com/documentation/image_transformations#adding_text_captions
  *
- * @param {Config} config
- * @return {string}
  */
 export default function generateSocialImage({
   title,
@@ -74,9 +70,9 @@ export default function generateSocialImage({
   titleFontSize = 64,
   taglineFontSize = 48,
   version = null,
-}) {
+}: Props) {
   // configure social media image dimensions, quality, and format
-  const imageConfig = [
+  const imageConfig: string = [
     `w_${imageWidth}`,
     `h_${imageHeight}`,
     'c_fill',
@@ -85,7 +81,7 @@ export default function generateSocialImage({
   ].join(',');
 
   // configure the title text
-  const titleConfig = [
+  const titleConfig: string = [
     `w_${textAreaWidth}`,
     'c_fit',
     `co_rgb:${titleColor || textColor}`,
@@ -98,18 +94,18 @@ export default function generateSocialImage({
   ].join(',');
 
   // configure the tagline text
-  const taglineConfig = tagline
+  const taglineConfig: string | undefined = tagline
     ? [
-        `w_${textAreaWidth}`,
-        'c_fit',
-        `co_rgb:${taglineColor || textColor}`,
-        `g_${taglineGravity}`,
-        `x_${taglineLeftOffset || textLeftOffset}`,
-        `y_${taglineTopOffset}`,
-        `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(
-          tagline,
-        )}`,
-      ].join(',')
+      `w_${textAreaWidth}`,
+      'c_fit',
+      `co_rgb:${taglineColor || textColor}`,
+      `g_${taglineGravity}`,
+      `x_${taglineLeftOffset || textLeftOffset}`,
+      `y_${taglineTopOffset}`,
+      `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${cleanText(
+        tagline,
+      )}`,
+    ].join(',')
     : undefined;
 
   // combine all the pieces required to generate a Cloudinary URL
