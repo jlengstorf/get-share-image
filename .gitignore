@@ -2,3 +2,8 @@ node_modules
 index.js
 index.d.ts
 index.mjs
+index.cjs
+index.cjs.*
+index.umd.*
+index.esm.*
+index.js.map

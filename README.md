@@ -2,7 +2,7 @@
 
 This is a utility function that builds social media images by overlaying a title and tagline over an image using [Cloudinary’s APIs](https://cloudinary.com/documentation/image_transformations?ap=lwj#adding_text_captions).
 
-> **NOTE:** a Cloudinary account is required to use this package. The free tier should be more than enough for most small to medium websites using this package. [Sign up for an account here!](https://jason.af/cloudinary)
+> **NOTE:** a Cloudinary account is required to use this package. The free tier should be more than enough for most small to medium websites using this package. [Sign up for an account here!](https://jason.energy/cloudinary)
 
 **This was created as part of an article series:**
 

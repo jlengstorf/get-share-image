@@ -1,12 +1,16 @@
 {
   "name": "@jlengstorf/get-share-image",
+  "type": "module",
   "version": "0.8.0",
-  "main": "index.js",
-  "module": "index.mjs",
+  "source": "src/index.ts",
   "exports": {
-    "import": "./index.mjs",
-    "require": "./index.js"
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "types": "./index.d.ts"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.esm.js",
+  "unpkg": "./dist/index.umd.js",
   "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
   "license": "MIT",
   "repository": {
@@ -14,19 +18,16 @@
     "url": "https://github.com/jlengstorf/get-share-image"
   },
   "scripts": {
-    "build:cjs": "tsc src/index.ts --outDir . -d",
-    "build:esm": "cpy ./src/index.ts . --rename=index.mjs",
-    "build": "yarn build:cjs && yarn build:esm",
+    "build": "microbundle",
+    "dev": "microbundle watch",
     "prepublish": "npm run build"
   },
   "files": [
-    "index.js",
-    "index.mjs",
-    "index.d.ts"
+    "./dist"
   ],
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "devDependencies": {
-    "cpy-cli": "^3.1.1",
-    "typescript": "^4.0.5"
+    "microbundle": "^0.15.1",
+    "typescript": "^5.3.3"
   }
 }
