@@ -1,7 +1,7 @@
 {
   "name": "@jlengstorf/get-share-image",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "source": "src/index.ts",
   "exports": {
     "import": "./dist/index.js",
