@@ -216,12 +216,4 @@ export function generateSocialImage({
 /**
  * @deprecated It's recommended to use named imports instead (`import { generateSocialImage } from '@jlengstorf/get-share-image'`). The default export will be removed in a future major version.
  */
-export default (args: GetShareImageConfig): string => {
-  console.warn('It’s recommended to use named imports instead:');
-  console.warn(
-    "import { generateSocialImage } from '@jlengstorf/get-share-image'",
-  );
-  console.warn('The default export will be removed in a future release.');
-
-  return generateSocialImage(args);
-};
+export default generateSocialImage;
